@@ -8,7 +8,7 @@ from flask import (
 )
 from .forms import ContactForm
 
-app = Flask(__name__, instance_relative_config=False)
+app = Flask(__name__, instance_relative_config=False, template_folder="templates")
 app.config.from_object('config.Config')
 
 
@@ -19,7 +19,7 @@ def contact():
     if form.validate_on_submit():
         return redirect(url_for("success"))
     return render_template(
-        "contact.jinja2",
+        "contact.html",
         form=form,
         template="form-template"
     )
