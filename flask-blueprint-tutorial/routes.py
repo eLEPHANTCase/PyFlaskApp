@@ -53,7 +53,6 @@ def user_records():
         title="Show Users"
     )
 
-
 @app.route('/', methods=['GET'])
 def create_user():
     """Create a user."""
